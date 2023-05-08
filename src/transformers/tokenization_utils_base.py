@@ -2345,6 +2345,7 @@ class PreTrainedTokenizerBase(SpecialTokensMixin, PushToHubMixin):
 
         # Backward compatibility for previous behavior, maybe we should deprecate it:
         # If you only set max_length, it activates truncation for max_length
+
         if max_length is not None and padding is False and truncation is None:
             if verbose:
                 if not self.deprecation_warnings.get("Truncation-not-explicitly-activated", False):
@@ -2434,7 +2435,9 @@ class PreTrainedTokenizerBase(SpecialTokensMixin, PushToHubMixin):
                     padding_strategy = PaddingStrategy.DO_NOT_PAD
                 else:
                     max_length = self.model_max_length
-
+            print(truncateion_strategy)
+            print(self.model_max_length)
+            print(self.pad_token_id)
             if truncation_strategy != TruncationStrategy.DO_NOT_TRUNCATE:
                 if self.model_max_length > LARGE_INTEGER:
                     if verbose:
