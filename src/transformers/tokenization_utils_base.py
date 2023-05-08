@@ -2437,6 +2437,7 @@ class PreTrainedTokenizerBase(SpecialTokensMixin, PushToHubMixin):
                     max_length = self.model_max_length
             print(truncateion_strategy)
             print(self.model_max_length)
+            self.pad_token_id=0
             print(self.pad_token_id)
             if truncation_strategy != TruncationStrategy.DO_NOT_TRUNCATE:
                 if self.model_max_length > LARGE_INTEGER:
