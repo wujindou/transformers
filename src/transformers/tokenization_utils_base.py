@@ -2439,6 +2439,7 @@ class PreTrainedTokenizerBase(SpecialTokensMixin, PushToHubMixin):
             print(self.model_max_length)
             self.pad_token_id=0
             print(self.pad_token_id)
+            self.pad_token='[PAD]'
             if truncation_strategy != TruncationStrategy.DO_NOT_TRUNCATE:
                 if self.model_max_length > LARGE_INTEGER:
                     if verbose:
